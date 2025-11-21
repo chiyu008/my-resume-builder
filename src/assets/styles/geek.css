@@ -1,0 +1,136 @@
+.markdown-body {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  padding: 0;
+  line-height: 1.8;
+  color: #f8f8f2;
+}
+
+.markdown-body h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #50fa7b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #50fa7b;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  letter-spacing: 2px;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff79c6;
+  border-left: 5px solid #bd93f9;
+  padding-left: 16px;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #8be9fd;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.markdown-body p {
+  margin: 14px 0;
+  color: #f8f8f2;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 32px;
+  margin: 14px 0;
+}
+
+.markdown-body li {
+  margin: 10px 0;
+  color: #f8f8f2;
+  line-height: 1.8;
+}
+
+.markdown-body strong {
+  color: #ffb86c;
+  font-weight: 700;
+}
+
+.markdown-body code {
+  background: rgba(68, 71, 90, 0.8);
+  color: #50fa7b;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 14px;
+  border: 1px solid rgba(80, 250, 123, 0.3);
+}
+
+.markdown-body pre {
+  background: rgba(40, 42, 54, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(189, 147, 249, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.markdown-body pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.markdown-body a {
+  color: #8be9fd;
+  text-decoration: none;
+  border-bottom: 2px solid #8be9fd;
+  transition: all 0.3s;
+}
+
+.markdown-body a:hover {
+  color: #50fa7b;
+  border-bottom-color: #50fa7b;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid #bd93f9;
+  padding-left: 20px;
+  margin: 20px 0;
+  color: #f1fa8c;
+  font-style: italic;
+  background: rgba(189, 147, 249, 0.1);
+  padding: 12px 12px 12px 20px;
+  border-radius: 4px;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 2px solid rgba(189, 147, 249, 0.5);
+  margin: 32px 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  background: rgba(40, 42, 54, 0.6);
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border: 1px solid rgba(189, 147, 249, 0.3);
+  padding: 12px;
+  text-align: left;
+  color: #f8f8f2;
+}
+
+.markdown-body table th {
+  background: rgba(189, 147, 249, 0.3);
+  font-weight: 700;
+  color: #50fa7b;
+}
