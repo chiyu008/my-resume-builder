@@ -1,0 +1,28 @@
+.preview-container {
+  // border-radius: 10px;
+  flex: 1;
+  overflow: auto;
+  //灰白色边界
+  background: #e8e8e8;
+  // background: #333;
+  padding: 24px;
+}
+
+.preview-content {
+  background: white;
+  min-height: 100%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+
+  .markdown-body {
+    padding: 48px;
+    max-width: none;
+  }
+}
+
+.preview-panel {
+  width: 60%;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}

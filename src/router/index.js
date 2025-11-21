@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import EditorView from '@/view/Editor/EditorView.vue'
+import EditorView from '@/view/EditorView.vue'
 
 const routes = [
   {
