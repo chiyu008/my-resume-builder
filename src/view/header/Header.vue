@@ -60,7 +60,7 @@ async function downloadPDF() {
     isExporting.value = true
 
     // 临时重置缩放以获得正确尺寸
-    const originalZoom = previewZoom.value
+    const originalZoom = previewZoom
     // previewZoom.value = 1
     emit('update:previewZoom', '1')
     // 等待 DOM 更新
