@@ -2,17 +2,17 @@
   <div class="preview-panel">
     <div class="panel-header">
       <span>实时预览</span>
-      <select v-model="previewValue" class="zoom-select">
-        <option :value="0.8" @click="sendToZoom">80%</option>
-        <option :value="0.9" @click="sendToZoom">90%</option>
-        <option :value="1" @click="sendToZoom">100%</option>
-        <option :value="1.1" @click="sendToZoom">110%</option>
-        <option :value="1.2" @click="sendToZoom">120%</option>
+      <select v-model="pdfStore.previewZoom" class="zoom-select">
+        <option :value="0.8">80%</option>
+        <option :value="0.9">90%</option>
+        <option :value="1">100%</option>
+        <option :value="1.1">110%</option>
+        <option :value="1.2">120%</option>
       </select>
     </div>
     <div class="preview-container">
       <div id="resume-preview" class="preview-content"
-        :style="{ transform: `scale(${previewValue})`, transformOrigin: 'top center' }">
+        :style="{ transform: `scale(${pdfStore.previewZoom})`, transformOrigin: 'top center' }">
         <div class="markdown-body" v-html="renderedHtml"></div>
       </div>
     </div>
@@ -26,12 +26,10 @@ import hljs from 'highlight.js'
 import { useEditorStore } from '@/store/editor'
 import { storeToRefs } from 'pinia'
 import './render.scss'
+import { usePdfStore } from '@/store/pdf'
 const { markdownContent } = storeToRefs(useEditorStore())
-const emit = defineEmits(['sendData'])
-const previewValue = ref(1)
-const sendToZoom = () => {
-  emit('sendData', previewValue.value)
-}
+const pdfStore = usePdfStore()
+
 // 防抖渲染
 let debounceTimer: number | null = null
 const renderedHtml = ref('')
