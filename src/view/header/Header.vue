@@ -1,7 +1,7 @@
 <template>
   <div class="toolbar">
     <div class="toolbar-left">
-      <h1 class="title">📝 在线简历生成器</h1>
+      <h1 class="title">我的在线简历</h1>
     </div>
 
     <div class="toolbar-right">

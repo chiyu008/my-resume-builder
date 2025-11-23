@@ -10,20 +10,22 @@
         <el-tooltip content="页边距">
           <select v-model.number="pdfStore.padding" class="padding-select">
             <option :value="24">24px</option>
-            <option :value="32">32px</option>
+            <option :value="30">30px</option>
             <option :value="48">48px</option>
             <option :value="64">64px</option>
           </select>
         </el-tooltip>
 
         <!-- 缩放选择 -->
-        <select v-model.number="pdfStore.previewZoom" class="zoom-select">
-          <option :value="0.6">60%</option>
-          <option :value="0.7">70%</option>
-          <option :value="0.8">80%</option>
-          <option :value="0.9">90%</option>
-          <option :value="1">100%</option>
-        </select>
+        <el-tooltip content="缩放比例">
+          <select v-model.number="pdfStore.previewZoom" class="zoom-select">
+            <option :value="0.6">60%</option>
+            <option :value="0.7">70%</option>
+            <option :value="0.8">80%</option>
+            <option :value="0.9">90%</option>
+            <option :value="1">100%</option>
+          </select>
+        </el-tooltip>
       </div>
     </div>
     <div class="preview-container">

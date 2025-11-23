@@ -148,9 +148,13 @@ const insertLink = (view: EditorView) => {
 }
 
 // 插入图片
-const insertImage = (view: EditorView) => {
+const insertImage = (view: EditorView, photoBase64?: string) => {
   const { from } = view.state.selection.main
-  const imageText = '![照片](https://via.placeholder.com/120x160)'
+
+  // 如果有上传的照片，使用 Base64
+  const imageUrl = photoBase64 || localStorage.getItem('resume-photo') || 'https://via.placeholder.com/120x160'
+  const imageText = `![照片](${imageUrl})`
+
   view.dispatch({
     changes: { from, insert: imageText },
     selection: { anchor: from + imageText.length }
@@ -235,6 +239,7 @@ const insertMainLayout = (view: EditorView) => {
   return {
     cmRef,
     handleReady,
-    handleToolbarClick
+    handleToolbarClick,
+    editorView
   }
 }
