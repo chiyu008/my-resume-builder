@@ -1,20 +1,23 @@
 /* 专业简历样式 - 根据实际简历设计 */
 .markdown-body {
   font-family: 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #333;
-  font-size: 14px;
+  font-size: 11px;
   max-width: none;
   margin: 0;
-  padding: 40px 48px;
+  padding: 25px 30px;
   background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
 }
 
 /* 姓名标题 - 居中大标题 */
 .markdown-body h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 0 0 16px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   text-align: center;
   color: #000;
@@ -26,18 +29,18 @@
 .markdown-body h1 + p {
   text-align: center;
   color: #666;
-  font-size: 13px;
-  margin: 4px 0;
-  line-height: 1.8;
+  font-size: 11px;
+  margin: 3px 0;
+  line-height: 1.5;
 }
 
 /* 模块标题（教育背景、项目经验等）- 黑色粗体带下划线 */
 .markdown-body h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
   color: #000;
   border: none;
   border-bottom: 2px solid #000;
@@ -46,10 +49,10 @@
 
 /* 子标题（学校名称、项目名称等）- 黑色粗体 */
 .markdown-body h3 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  margin-top: 16px;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 6px;
   color: #000;
   border: none;
   display: flex;
@@ -60,30 +63,30 @@
 /* 时间范围样式 */
 .markdown-body h3::after {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 11px;
   color: #666;
 }
 
 /* 段落 */
 .markdown-body p {
-  margin: 8px 0;
-  line-height: 1.7;
+  margin: 6px 0;
+  line-height: 1.5;
   color: #333;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 /* 列表 */
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 20px;
-  margin: 8px 0;
+  padding-left: 18px;
+  margin: 6px 0;
 }
 
 .markdown-body li {
-  margin: 6px 0;
-  line-height: 1.7;
+  margin: 4px 0;
+  line-height: 1.4;
   color: #333;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 /* 无序列表项标记 */

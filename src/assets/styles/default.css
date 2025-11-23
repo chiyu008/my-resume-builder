@@ -1,56 +1,59 @@
 .markdown-body {
   font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  line-height: 1.8;
+  line-height: 1.4;
   color: #333;
-  font-size: 15px;
+  font-size: 11px;
   max-width: none;
   margin: 0;
-  padding: 0;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
 }
 
 .markdown-body h1 {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   margin-top: 0;
-  border-bottom: 3px solid #2c3e50;
-  padding-bottom: 10px;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 6px;
   color: #2c3e50;
   letter-spacing: 1px;
 }
 
 .markdown-body h2 {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
-  margin-top: 32px;
-  margin-bottom: 16px;
+  margin-top: 18px;
+  margin-bottom: 10px;
   color: #3498db;
-  border-left: 4px solid #3498db;
-  padding-left: 12px;
+  border-left: 3px solid #3498db;
+  padding-left: 10px;
 }
 
 .markdown-body h3 {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 12px;
+  margin-top: 12px;
+  margin-bottom: 8px;
   color: #34495e;
 }
 
 .markdown-body p {
-  margin: 12px 0;
-  line-height: 1.8;
+  margin: 8px 0;
+  line-height: 1.5;
 }
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 28px;
-  margin: 12px 0;
+  padding-left: 20px;
+  margin: 8px 0;
 }
 
 .markdown-body li {
-  margin: 8px 0;
-  line-height: 1.7;
+  margin: 4px 0;
+  line-height: 1.4;
 }
 
 .markdown-body strong {

@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 export const useEditorStore = defineStore('editor', () => {
-  // 默认简历内容
-  const markdownContent = ref(`# 张三的简历
+  // 从 localStorage 恢复或使用默认简历内容
+  const savedContent = localStorage.getItem('resume-content')
+  const markdownContent = ref(savedContent || `# 张三的简历
 
 ## 个人信息
 
@@ -35,7 +36,23 @@ export const useEditorStore = defineStore('editor', () => {
 - 了解 Git 版本控制
 `)
 
+  // 自动保存到 localStorage（防抖 1 秒）
+  let saveTimer: number | null = null
+  watch(markdownContent, (newVal) => {
+    if (saveTimer) clearTimeout(saveTimer)
+    saveTimer = window.setTimeout(() => {
+      localStorage.setItem('resume-content', newVal)
+      console.log('✅ 简历已自动保存')
+    }, 1000)
+  })
+
+  // 清除保存的内容
+  const clearSaved = () => {
+    localStorage.removeItem('resume-content')
+  }
+
   return {
     markdownContent,
+    clearSaved,
   }
 })

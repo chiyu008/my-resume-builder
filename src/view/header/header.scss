@@ -23,6 +23,7 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    position: relative;
 
     .template-select {
       padding: 8px 16px;
@@ -68,6 +69,25 @@
       &:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+      }
+    }
+
+    /* 导出进度条 */
+    .export-progress {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        transition: width 0.3s ease;
+        border-radius: 2px;
       }
     }
   }

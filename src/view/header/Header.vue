@@ -7,14 +7,20 @@
     <div class="toolbar-right">
       <RouterLink to="/">简历模版</RouterLink>
       <select v-model="currentTemplate" class="template-select">
-        <option value="default">简约模板</option>
-        <option value="geek">极客模板</option>
+        <option value="default">默认模板</option>
+        <option value="simple">简洁模板</option>
         <option value="professional">专业模板</option>
+        <option value="creative">创意模板</option>
+        <option value="geek">极客模板</option>
       </select>
       <button @click="pdfStore.downloadPDF" class="btn-export" :disabled="pdfStore.isExporting">
         <span v-if="!pdfStore.isExporting">📄 导出 PDF</span>
-        <span v-else>导出中...</span>
+        <span v-else>导出中... {{ pdfStore.exportProgress }}%</span>
       </button>
+      <!-- 导出进度条 -->
+      <div v-if="pdfStore.isExporting" class="export-progress">
+        <div class="progress-bar" :style="{ width: `${pdfStore.exportProgress}%` }"></div>
+      </div>
     </div>
   </div>
 </template>

@@ -2,25 +2,54 @@
   <div class="preview-panel">
     <div class="panel-header">
       <span>实时预览</span>
-      <select v-model="pdfStore.previewZoom" class="zoom-select">
-        <option :value="0.6">60%</option>
-        <option :value="0.7">70%</option>
-        <option :value="0.8">80%</option>
-        <option :value="0.9">90%</option>
-        <option :value="1">100%</option>
-      </select>
+      <div class="header-controls">
+        <!-- 字数统计 -->
+        <span class="word-count">📊 {{ wordCount }} 字</span>
+
+        <!-- 页边距调整 -->
+        <el-tooltip content="页边距">
+          <select v-model.number="pdfStore.padding" class="padding-select">
+            <option :value="24">24px</option>
+            <option :value="32">32px</option>
+            <option :value="48">48px</option>
+            <option :value="64">64px</option>
+          </select>
+        </el-tooltip>
+
+        <!-- 缩放选择 -->
+        <select v-model.number="pdfStore.previewZoom" class="zoom-select">
+          <option :value="0.6">60%</option>
+          <option :value="0.7">70%</option>
+          <option :value="0.8">80%</option>
+          <option :value="0.9">90%</option>
+          <option :value="1">100%</option>
+        </select>
+      </div>
     </div>
     <div class="preview-container">
-      <div id="resume-preview" class="preview-content"
-        :style="{ transform: `scale(${pdfStore.previewZoom})`, transformOrigin: 'top center' }">
-        <div class="markdown-body" v-html="renderedHtml"></div>
+      <!-- A4 纸张模拟 -->
+      <div class="a4-page-wrapper">
+        <div
+          id="resume-preview"
+          class="preview-content a4-page"
+          :style="{
+            transform: `scale(${pdfStore.previewZoom})`,
+            transformOrigin: 'top center',
+          }"
+        >
+          <div
+            class="markdown-body"
+            :style="{ padding: `${pdfStore.padding}px` }"
+            v-html="renderedHtml"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import { useEditorStore } from '@/store/editor'
@@ -29,6 +58,17 @@ import './render.scss'
 import { usePdfStore } from '@/store/pdf'
 const { markdownContent } = storeToRefs(useEditorStore())
 const pdfStore = usePdfStore()
+
+// 字数统计
+const wordCount = computed(() => {
+  // 移除 Markdown 语法符号，计算纯文本字数
+  const text = markdownContent.value
+    .replace(/[#*`\[\]()_~>-]/g, '') // 移除 Markdown 符号
+    .replace(/!\[.*?\]\(.*?\)/g, '') // 移除图片
+    .replace(/\[.*?\]\(.*?\)/g, '') // 移除链接
+    .replace(/\s+/g, '') // 移除空白
+  return text.length
+})
 
 // 防抖渲染
 let debounceTimer: number | null = null
