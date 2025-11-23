@@ -3,11 +3,11 @@
     <div class="panel-header">
       <span>实时预览</span>
       <select v-model="pdfStore.previewZoom" class="zoom-select">
+        <option :value="0.6">60%</option>
+        <option :value="0.7">70%</option>
         <option :value="0.8">80%</option>
         <option :value="0.9">90%</option>
         <option :value="1">100%</option>
-        <option :value="1.1">110%</option>
-        <option :value="1.2">120%</option>
       </select>
     </div>
     <div class="preview-container">

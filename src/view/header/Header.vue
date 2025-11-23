@@ -9,6 +9,7 @@
       <select v-model="currentTemplate" class="template-select">
         <option value="default">简约模板</option>
         <option value="geek">极客模板</option>
+        <option value="professional">专业模板</option>
       </select>
       <button @click="pdfStore.downloadPDF" class="btn-export" :disabled="pdfStore.isExporting">
         <span v-if="!pdfStore.isExporting">📄 导出 PDF</span>
